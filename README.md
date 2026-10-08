@@ -96,10 +96,6 @@ All runs produced `Result = 499999999500.00`.
 | 6 | 82.35% | 81.70% |
 | 16 | 57.00% | 54.42% |
 
-![Execution time](results/fig1_execution_time.png)
-![Speedup](results/fig2_speedup.png)
-![Efficiency](results/fig3_efficiency.png)
-
 ### Observations
 
 - Execution time drops steadily as threads increase for both Pthreads and OpenMP; at 16 threads it is roughly 9x faster than sequential.
@@ -118,29 +114,3 @@ All runs produced `Result = 499999999500.00`.
 | Protect shared data | mutex | `critical` |
 | Coordination | join / synchronization | `barrier` |
 | Combine partial results | programmer-managed | `reduction` |
-
-## Screenshots (actual terminal output)
-
-**Setup, `thread1`, `thread2`**
-![Setup, thread1, thread2](docs/screenshots/01_setup_thread1_thread2.png)
-
-**`thread_sum`, `race`, `mutex`**
-![thread_sum, race, mutex](docs/screenshots/02_thread_sum_race_mutex.png)
-
-**`omp_hello`**
-![omp_hello](docs/screenshots/03_omp_hello.png)
-
-**`omp_for`, `omp_race`, `omp_critical`**
-![omp_for, omp_race, omp_critical](docs/screenshots/04_omp_for_race_critical.png)
-
-**`omp_barrier`**
-![omp_barrier](docs/screenshots/05_omp_barrier.png)
-
-**Sequential baseline (5 runs)**
-![sequential](docs/screenshots/06_sequential.png)
-
-**`pthread_perf` (1, 2, 4, 6, 16 threads)**
-![pthread_perf](docs/screenshots/07_pthread_perf.png)
-
-**`omp_perf` (1, 2, 4, 6, 16 threads)**
-![omp_perf](docs/screenshots/08_omp_perf.png)
